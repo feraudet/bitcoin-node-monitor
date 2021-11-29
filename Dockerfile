@@ -10,4 +10,5 @@ COPY server /app/server
 RUN cd /app/server && npm install
 COPY config.js /app
 WORKDIR /app/server
-CMD ["npm", "start"]
+COPY entrypoint.sh .
+CMD ["/app/server/entrypoint.sh"]
